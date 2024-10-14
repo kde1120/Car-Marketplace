@@ -26,37 +26,30 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Project setup
+## 설치 및 실행
 
-```bash
-$ npm install
-```
+1. 프로젝트 클론:
 
-## Compile and run the project
+   ```
+   git clone [repository-url]
+   cd vehicle-management-system
+   ```
 
-```bash
-# development
-$ npm run start
+2. 의존성 설치:
 
-# watch mode
-$ npm run start:dev
+   ```
+   npm install
+   ```
 
-# production mode
-$ npm run start:prod
-```
+3. 애플리케이션 실행:
+   ```
+   npm run start
+   ```
 
-## Run tests
+## API 문서
 
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
+애플리케이션이 실행된 후, Swagger UI를 통해 API 문서를 확인할 수 있습니다:
+http://localhost:3000/api
 
 ## Resources
 
