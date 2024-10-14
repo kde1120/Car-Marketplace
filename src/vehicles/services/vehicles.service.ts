@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { IVehicleRepository } from '../interfaces/vehicle-repository.interface';
-import { VehicleFactoryService } from './vehicle-factory.service';
-import { VehicleCalculationService } from './vehicle-calculation.service';
+import { IVehicleFactoryService } from '../interfaces/vehicle-factory-service.interface';
+import { IVehicleCalculationService } from '../interfaces/vehicle-calculation-service.interface';
 import { IVehicle } from '../interfaces/vehicle.interface';
 import { VehicleDetailsDto } from '../dto/vehicle-detail.dto';
 
@@ -9,8 +9,10 @@ import { VehicleDetailsDto } from '../dto/vehicle-detail.dto';
 export class VehiclesService {
   constructor(
     @Inject('IVehicleRepository') private vehicleRepository: IVehicleRepository,
-    private readonly vehicleFactoryService: VehicleFactoryService,
-    private readonly vehicleCalculationService: VehicleCalculationService,
+    @Inject('IVehicleFactoryService')
+    private vehicleFactoryService: IVehicleFactoryService,
+    @Inject('IVehicleCalculationService')
+    private vehicleCalculationService: IVehicleCalculationService,
   ) {}
 
   async create(

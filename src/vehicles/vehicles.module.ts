@@ -12,11 +12,17 @@ import { MotorcycleFactory } from './factories/motorcycle.factory';
   controllers: [VehiclesController],
   providers: [
     VehiclesService,
-    VehicleFactoryService,
-    VehicleCalculationService,
     {
       provide: 'IVehicleRepository',
       useClass: VehicleRepository,
+    },
+    {
+      provide: 'IVehicleFactoryService',
+      useClass: VehicleFactoryService,
+    },
+    {
+      provide: 'IVehicleCalculationService',
+      useClass: VehicleCalculationService,
     },
     {
       provide: 'VehicleFactories',
